@@ -1,13 +1,52 @@
-import { Link } from "react-router-dom";
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-export default function Navbar() {
+const linkStyles = {
+  display: "inline-block",
+  width: "",
+  padding: "12px",
+  margin: "0 6px 6px",
+  background: "blue",
+  textDecoration: "none",
+  color: "white",
+  
+};
+
+function NavBar() {
   return (
-    // Match the route to the link
-    <>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/contact">Contact</Link>
-    </>
+    <div>
+      <NavLink
+        to="/"
+        exact
+        style={linkStyles}
+        activeStyle={{
+          background: "darkblue",
+        }}
+      >
+        Home
+      </NavLink>
+      <NavLink
+        to="/About"
+        exact
+        style={linkStyles}
+        activeStyle={{
+          background: "darkblue",
+        }}
+      >
+        About
+      </NavLink>
+      <NavLink
+        to="/AddTransaction"
+        exact
+        style={linkStyles}
+        activeStyle={{
+          background: "darkblue",
+        }}
+      >
+        AddTransaction
+      </NavLink>
+    </div>
   );
 }
+
+export default NavBar;
